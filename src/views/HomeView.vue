@@ -16,7 +16,7 @@ import { ref, computed } from 'vue'
 import ScoreProgress from '@/components/ScoreProgress.vue'
 import { useScoreStore } from '@/stores/score'
 import frog from '@/assets/frog.png'
-import lizard from '@/assets/lizard.png'
+import lizard from '@/assets/lizzard.png'
 
 const img = ref(null)
 const imgSrc = computed(() => (store.score > 25 ? lizard : frog))
@@ -25,16 +25,15 @@ const store = useScoreStore()
 
 function increment(event) {
   store.add(1)
-
   const rect = event.target.getBoundingClientRect()
 
-  const offsetX = event.clientX - rect.left - rect.width / 2
-  const offsetY = event.clientY - rect.top - rect.height / 2
+  const offfsetX = event.clientX - rect.left - rect.width / 2
+  const offfsetY = event.clientY - rect.top - rect.height / 2
 
   const DEG = 40
 
-  const tiltX = (offsetY / rect.height) * DEG
-  const tiltY = (offsetX / rect.width) * -DEG
+  const tiltX = (offfsetY / rect.height) * DEG
+  const tiltY = (offfsetX / rect.width) * -DEG
 
   img.value.style.setProperty('--tiltX', `${tiltX}deg`)
   img.value.style.setProperty('--tiltY', `${tiltY}deg`)

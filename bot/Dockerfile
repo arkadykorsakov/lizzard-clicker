@@ -7,4 +7,5 @@ ARG PORT
 ARG TOKEN
 ARG WEB_APP_URL
 EXPOSE $PORT
-CMD [ "npm", "start" ]
+
+CMD ["npm", "start"]

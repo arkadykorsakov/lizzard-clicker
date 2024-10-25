@@ -9,7 +9,7 @@ const bot = new Telegraf(token)
 
 bot.command('start', (ctx) => {
   ctx.reply(
-    `${webAppUrl}?ref=${ctx.payload}`,
+    'Hello! Press to start the app',
     Markup.inlineKeyboard([
       Markup.button.webApp('Open mini app', `${webAppUrl}?ref=${ctx.payload}`)
     ])
